@@ -7,6 +7,10 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 ktor = "2.3.11"
 coroutines = "1.8.0"
+android-minSdk = "24"
+android-compileSdk = "33"
+nexus-publish = "2.0.0"
+vanniktech-publish = "0.28.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -22,6 +26,7 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -29,3 +34,5 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+kotlinDokka = { id = "org.jetbrains.dokka", version.ref = "kotlin" }
+vanniktech-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-publish" }

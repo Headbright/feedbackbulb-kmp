@@ -1,4 +1,3 @@
-.DS_Store
 *.iml
 .gradle
 .idea
@@ -9,4 +8,3 @@ captures
 .cxx
 local.properties
 xcuserdata
-gradle.properties
