@@ -1,6 +1,4 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
-    includeBuild("convention-plugins")
     repositories {
         google()
         gradlePluginPortal()
@@ -11,9 +9,13 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         google()
+        gradlePluginPortal()
         mavenCentral()
     }
-}
 
-rootProject.name = "feedbackbulb"
-include(":core-sdk")
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
+}

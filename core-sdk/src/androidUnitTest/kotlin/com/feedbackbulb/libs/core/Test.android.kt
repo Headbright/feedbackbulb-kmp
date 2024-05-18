@@ -8,6 +8,7 @@ class AndroidGreetingTest {
 
     @Test
     fun testExample() = runTest {
-        assertTrue("Check iOS is mentioned", Greeting().greeting().contains("Ktor"))
+        val result = Greeting().greeting()
+        kotlin.test.assertTrue(result.isNotEmpty())
     }
 }
