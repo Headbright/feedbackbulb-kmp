@@ -11,6 +11,9 @@ Currently supported platforms are:
 - Kotlin/JVM
 - Android
 - iOS
+- watchOS
+- tvOS
+- macOS
 
 
 ## Getting started
@@ -49,17 +52,6 @@ client.sendFeedback("This is a test feedback from Feedback SDK for Kotlin Multip
 
 The following are notes for local development of the SDK and publishing updates.
 
-Create or update gradle.properties file in the root of the project with the following content:
-
-```
-signing.keyId=...
-signing.password=...
-signing.secretKeyRingFile=....
-mavenCentralUsername=...
-mavenCentralPassword=...
-```
-
-DO NOT CHECK THIS IN!
-
+Create or update gradle.properties file in the root of the project.
 
 To publish a new version, run `./gradlew publishAndReleaseToMavenCentral --no-configuration-cache`

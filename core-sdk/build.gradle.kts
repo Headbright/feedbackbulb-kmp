@@ -1,4 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
+//import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -19,11 +20,43 @@ kotlin {
             }
         }
     }
-    
+
+//    val xcframeworkName = "FeedbackbulbCoreSDK"
+//    val xcf = XCFramework(xcframeworkName)
+//
+//    listOf(
+//        iosX64(),
+//        iosArm64(),
+//        iosSimulatorArm64(),
+//        watchosX64(),
+//        watchosArm64(),
+//        watchosSimulatorArm64(),
+//        macosX64(),
+//        macosArm64(),
+//        tvosX64(),
+//        tvosArm64(),
+//        tvosSimulatorArm64(),
+//    ).forEach {
+//        it.binaries.framework {
+//            baseName = xcframeworkName
+//            binaryOption("bundleId", "com.feedbackbulb.${xcframeworkName}")
+//            xcf.add(this)
+//            isStatic = true
+//        }
+//    }
+
     listOf(
         iosX64(),
         iosArm64(),
-        iosSimulatorArm64()
+        iosSimulatorArm64(),
+        watchosX64(),
+        watchosArm64(),
+        watchosSimulatorArm64(),
+        macosX64(),
+        macosArm64(),
+        tvosX64(),
+        tvosArm64(),
+        tvosSimulatorArm64(),
     ).forEach {
         it.binaries.framework {
             baseName = "core-sdk"
@@ -72,7 +105,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.feedbackbulb",
         artifactId = "core-sdk",
-        version = "0.0.3"
+        version = "0.0.4"
     )
 
     // Configure POM metadata for the published artifact
