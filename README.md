@@ -60,3 +60,6 @@ mavenCentralPassword=...
 ```
 
 DO NOT CHECK THIS IN!
+
+
+To publish a new version, run `./gradlew publishAndReleaseToMavenCentral --no-configuration-cache`
