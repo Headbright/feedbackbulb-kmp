@@ -20,7 +20,7 @@ Currently supported platforms are:
 
 ### Add the dependency
 
-The library is available directly from [Maven Central](https://central.sonatype.com/artifact/com.feedbackbulb/core-sdk. Add the following to your `build.gradle.kts` file:
+The library is available directly from [Maven Central](https://central.sonatype.com/artifact/com.feedbackbulb/core-sdk). Add the following to your `build.gradle.kts` file:
 
 ```kotlin
 implementation("com.feedbackbulb:core-sdk:X.X.X")
