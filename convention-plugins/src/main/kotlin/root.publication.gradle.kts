@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
     group = "com.feedbackbulb"
-    version = "0.0.2"
+    version = "0.0.3"
 }
 
 nexusPublishing {
