@@ -31,6 +31,8 @@ kotlin {
         }
     }
 
+    jvm()
+
     sourceSets {
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
@@ -39,13 +41,16 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.ktor.serialization.kotlinx.protobuf)
         }
+
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.kotlinx.coroutines.android)
         }
+
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             implementation(libs.kotlinx.coroutines.test)
@@ -67,7 +72,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.feedbackbulb",
         artifactId = "core-sdk",
-        version = "0.0.2"
+        version = "0.0.3"
     )
 
     // Configure POM metadata for the published artifact
