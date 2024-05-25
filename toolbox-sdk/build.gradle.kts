@@ -5,6 +5,8 @@ import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.org.jetbrains.compose)
+    alias(libs.plugins.org.jetbrains.kotlin.compose)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.vanniktech.publish)
@@ -53,17 +55,11 @@ kotlin {
         iosX64(),
         iosArm64(),
         iosSimulatorArm64(),
-        watchosX64(),
-        watchosArm64(),
-        watchosSimulatorArm64(),
         macosX64(),
         macosArm64(),
-        tvosX64(),
-        tvosArm64(),
-        tvosSimulatorArm64(),
     ).forEach {
         it.binaries.framework {
-            baseName = "FeedbackbulbCoreSDK"
+            baseName = "FeedbackbulbToolboxSDK"
             isStatic = true
         }
     }
@@ -72,7 +68,11 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-implementation(libs.ktor.client.core)
+            implementation(compose.ui)
+            implementation(compose.foundation)
+            implementation(compose.runtime)
+
+            implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
@@ -108,13 +108,13 @@ android {
 mavenPublishing {
     coordinates(
         groupId = "com.feedbackbulb",
-        artifactId = "core-sdk",
+        artifactId = "toolbox-sdk",
         version = "0.0.4"
     )
 
     // Configure POM metadata for the published artifact
     pom {
-        name.set("Feedbackbulb SDK")
+        name.set("Feedbackbulb Toolbox SDK")
         description.set("Feedbackbulb is an interactive feedback framework for apps and websites.")
         url.set("https://feedbackbulb.com/")
         inceptionYear.set("2024")

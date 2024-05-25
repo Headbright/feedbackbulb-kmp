@@ -2,9 +2,9 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     includeBuild("convention-plugins")
     repositories {
-        google()
         gradlePluginPortal()
         mavenCentral()
+        google()
     }
 }
 
@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "feedbackbulb"
-include(":core-sdk")
+include("core-sdk", "toolbox-sdk", "app-samples")
