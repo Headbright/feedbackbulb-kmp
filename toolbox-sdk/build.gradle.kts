@@ -68,6 +68,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            api(project(":core-sdk"))
             implementation(compose.ui)
             implementation(compose.foundation)
             implementation(compose.runtime)
