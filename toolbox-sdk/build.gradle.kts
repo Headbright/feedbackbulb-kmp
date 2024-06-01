@@ -69,7 +69,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":core-sdk"))
-            implementation(compose.ui)
+            implementation(compose.material3)
             implementation(compose.foundation)
             implementation(compose.runtime)
 
@@ -95,7 +95,7 @@ kotlin {
         }
     }
 
-    task("testClasses")
+//    task("testClasses")
 }
 
 android {
@@ -110,7 +110,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.feedbackbulb",
         artifactId = "toolbox-sdk",
-        version = "0.0.4"
+        version = "0.0.5"
     )
 
     // Configure POM metadata for the published artifact

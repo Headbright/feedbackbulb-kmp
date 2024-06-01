@@ -109,7 +109,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.feedbackbulb",
         artifactId = "core-sdk",
-        version = "0.0.4"
+        version = "0.0.5"
     )
 
     // Configure POM metadata for the published artifact

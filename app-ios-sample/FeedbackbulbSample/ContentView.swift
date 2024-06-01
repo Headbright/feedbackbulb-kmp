@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FeedbackbulbCoreSDK
+import FeedbackbulbToolboxSDK
 
 struct ContentView: View {
     var body: some View {
@@ -20,6 +21,7 @@ struct ContentView: View {
                     try? await sendFeedback()
                 }
             })
+            FeedbackToolboxForm()
         }
         .padding()
     }
@@ -29,6 +31,15 @@ struct ContentView: View {
         
         
         let _ = try await client.sendFeedback(content: "Hello from iOS using Kotlin Multiplatform")
+    }
+}
+
+public struct FeedbackToolboxForm: UIViewControllerRepresentable {
+    public func makeUIViewController(context: Context) -> UIViewController {
+        return FeedbackFormControllerKt.FeedbackFormController()
+    }
+
+    public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
 }
 

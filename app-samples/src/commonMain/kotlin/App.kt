@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.feedbackbulb.libs.core.FeedbackSDKClient
+import com.feedbackbulb.libs.toolbox.FeedbackForm
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -31,6 +32,7 @@ fun App() {
             Button(onClick = sendFeedback) {
                 Text("Click me!")
             }
+            FeedbackForm()
             AnimatedVisibility(loading) {
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     CircularProgressIndicator(modifier = Modifier.fillMaxWidth())
